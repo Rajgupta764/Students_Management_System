@@ -10,7 +10,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 app.use(express.json());
 
-const port = 5000;
+const port =process.env.port || 5000;
+
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
